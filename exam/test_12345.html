@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .write {
+        text-align: center;
+    }
+    .a{
+        background-color: coral;
+        color: white;
+        text-align: center;
+    }
+    .b{
+        background-color:lemonchiffon;
+    }
+</style>
+
+<body>
+    <form action="insert.no" method="post">
+        <fieldset>
+
+
+
+            <legend>공지사항 작성하기</legend>
+            <table>
+
+                <tr>
+                    <td>제목</td>
+                    <td><input type="text" placeholder="제목을 입력하시오."></td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td><textarea placeholder="내용을 입력하시오"></textarea></td>
+                </tr>
+                <tr>
+                    <td>첨부파일</td>
+                    <td><button>파일선택</button>선택된 파일없음</td>
+                </tr>
+                <tr class="write">
+
+                    <td colspan="2"><button>작성하기</button></td>
+                </tr>
+    </form>
+    </fieldset>
+    </table>
+    <br>
+    <hr>
+    <table border="1px" width="590px">
+        <tr class="a">
+            <td>번호</td>
+            <td colspan="2">제목</td>
+            <td>작성자 </td>
+            <td>작성일</td>
+            <td>조회수</td>
+        </tr>
+        <tr class="b">
+            <td>1</td>
+            <td>공지사항 제목1</td>
+            <td><button>바로가기</button></td>
+            <td>홍길동</td>
+            <td>2023-06-27</td>
+            <td>5</td>
+        </tr>
+        <tr class="b">
+            <td>2</td>
+            <td>공지사항 제목2</td>
+            <td><button>바로가기</button></td>
+            <td>홍길동</td>
+            <td>2023-06-27</td>
+            <td>5</td>
+
+        </tr>
+        <tr class="b">
+            <td>3</td>
+            <td>공지사항 제목3</td>
+            <td><button>바로가기</button></td>
+            <td>홍길동</td>
+            <td>2023-06-27</td>
+            <td>5</td>
+
+        </tr>
+        <tr class="b">
+            <td>4</td>
+            <td>공지사항 제목4</td>
+            <td><button>바로가기</button></td>
+            <td>홍길동</td>
+            <td>2023-06-27</td>
+            <td>5</td>
+        <tr class="b">
+            <td>5</td>
+            <td>공지사항 제목5</td>
+            <td><button>바로가기</button></td>
+            <td>홍길동</td>
+            <td>2023-06-27</td>
+            <td>5</td>
+
+        </tr>
+        <tr class="a">
+            <td colspan="4">전체공지사항 갯수</td>
+            <td colspan="2">5개</td>
+        </tr>
+    </table>
+</body>
+
+</html>
