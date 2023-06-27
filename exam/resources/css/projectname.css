@@ -1,0 +1,8 @@
+@import url("/resources/css/projectname_layout.css");
+@import url("/resources/css/projectname_header.css");
+@import url("/resources/css/projectname_footer.css");
+
+:root{
+    --blue:#0077
+
+}

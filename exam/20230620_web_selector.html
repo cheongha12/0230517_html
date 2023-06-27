@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet"> -->
+    <link href="./resources/css/reset.css" rel="stylesheet">
+    <style>
+
+     @font-face{
+        font-family:'Ostrich';
+       src:
+            local('Osrich Sans')
+             url('resources/fonts/ostrich-sans-bold.ttf') format('truetype')
+             ,url('resources/fonts/ostrich-sans-bold.woff') format('woff');
+       
+        font-style: bold ;
+        font-weight: 400;
+        
+     }   
+     div{
+        /* font-family: 'Ostrich','Hi Melody','함초롱바탕', Times, serif;
+        font-size: 28px;
+        font-weight: 400;
+        font-variant: small-caps;
+        font-style: oblique; */
+        
+        font:  800 2em 'Ostrich','Hi Melody','함초롱바탕', Times, serif,;
+        line-height: 50px;
+       
+    }
+
+        /*CSS문법
+        */
+        
+    /* p#id1{background: gold;color: beige;}   
+    p#id2{background: crimson;color: burlywood;}   
+    p#id3{background: darkgray;color: aliceblue;} 
+
+    p[id=id1]{background: gold;color: beige;}
+    p[id=id1]{background: crimson;color: burlywood;}
+    p[id=id1]{background: darkgray;color: aliceblue;} 
+
+    p:nth-child(1){background: gold;color: beige;}
+    p:nth-child(2){background: crimson;color: burlywood;}
+    p:nth-child(3){background: darkgray;color: aliceblue;}
+
+    p:first-child{background: gold;color: beige;}
+    p:nth-child(2){background: crimson;color: burlywood;}
+    p:last-child{background: darkgray;color: aliceblue;}
+
+    p:first-of-type{background: gold;color: beige;}
+    p:nth-of-type(2){background: crimson;color: burlywood;}
+    p:last-of-type{background: darkgray;color: aliceblue;}
+        
+    .c1.ca.cc{background: gold;color: beige;}   
+    .c2.ac.cb.cc{background: crimson;color: burlywood;}   
+    .c3.cb{background: darkgray;color: aliceblue;} 
+
+    p.ca.cc{background: gold;color: beige;}
+    p.ac.cb.cc{ackground: crimson;color: burlywood;}
+    p.cb{background: darkgray;color: aliceblue;}*/
+
+    div #id1{
+        /* border-width: 5px 10px 5px 2px;
+        border-color: black plum lemonchiffon paleturquoise;
+        border-style: solid dashed dotted solid; */
+
+        border-width: 5px 10px ;
+        border-color: powderblue paleturquoise;
+        border-style: solid dashed ;
+        border-radius: 50px 10px 50px 10px;
+        box-shadow: #ddd 0 0 10px inset;
+
+
+        /* border-top: 5px solid black;
+         border-right: 10px dotted skyblue;
+          border-bottom: 5px solid black; 
+        border-left: 1px solid papayawhip;*/
+       
+       
+
+
+        display: block;
+        width: 400px;
+        padding: 20px;
+        margin: 20px;
+        background: rgba(250, 250, 00, 0.3);color:cadetblue;}   
+    div #id2{background: hsl(360, 70%, 80%);color:blanchedalmond;}   
+    div #id3{background: darkgray;color: aliceblue;} 
+
+
+    </style>
+</head>
+<body>
+    <pre>
+        여기
+        그대로
+            표현
+    </pre>
+    <div>
+    <a>여기 끼워넣기</a>
+    <p id="id1" class="c1 ca cc">What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p id="id2" class="c2 ac cb cc">What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <a>여기 끼워넣기</a>
+    <p id="id3" class="c3 cb">What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+</body>
+</html>
