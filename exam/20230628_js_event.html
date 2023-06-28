@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js event</title>
+    <link href="/resources/css/reset.css" rel="stylesheet">
+</head>
+<body>   
+    <form id="frmNick">
+        <input type="text" name="nick">
+        <input type="button" id ="frmNickSubmit" value="submit기능">
+    </form>
+    <script>
+        document.getElementById("frmNickSubmit").addEventListener("click",function(){
+            Document.getElementById("frmNick").action="#";
+            Document.getElementById("frmNick").methode="get";
+            Document.getElementById("frmNick").submit();
+        });
+   
+        
+    </script>
+     <form action="#2" method="get" onsubmit="return frmSubmitHandler();">
+        <input type="text" name="nick">
+        <input type="submit" value="submit기능2">
+    </form>
+    <script>
+        function frmSubmitHandler(){
+            console.log("submit이벤트 함수");
+            //주로 입력한 값들의 유효성 검사를 함.
+            //예 입력한 문자가 20글자이상이면 alert창으로 경고하고
+            //다시 입력하게 한 후 문자가 20글자미만이면 action으로 이동(submit동작함)
+            var nickElement= document.getElementsByClassName("nick");
+            console.log(nickElement);
+            console.log(nickElement[2].value);
+            if(nickElement[2].value.length<20){
+                console.log("nick이 20글자 미만");
+                return true;
+            }else{
+                console.log("nick이 20글자 이상");
+                alert("20글자 미만으로 작성해주세요.");
+                return false;
+            }
+        }
+    </script>
+    
+    <button type="button" onclick="console.log('안녕'); console.log('안녕2');alert('경고!!');">버튼1</button>
+    <button type="button" id="btn-1">버튼2</button>    
+    <!---HTML onclick 속성 js onclick 속성과 차이 있음 .1.this가 다름--->
+    <button type="button" onclick="btn2ClickHandler();">버튼3</button>
+    <button type="button" id="btn-2">버튼4</button>
+    <button type="button" id="btn-3">버튼5</button>
+    <button type="button" id="btn-4">버튼6</button>
+
+    <script>
+        //js onclick 속성 차이 
+        var btn1= document.getElementById("btn-1");
+        console.log(btn1);
+        console.log(typeof(btn1));
+        btn1.onclick=function(){
+            console.log('안녕');
+             console.log('안녕2');
+             alert('경고!!');
+        };
+
+        //방법1 간단하게 작성(익명함수)
+        document.getElementById("btn-1").onclick=function(){
+            console.log('안녕');
+             console.log('안녕2');
+             alert('경고!!');
+             //한번만 클릭이벤트 실해하고 싶을때 방법
+            //  document.getElementById("btn-1").onclick= null;
+            //  this.onclick= null;    //this 는 click이 되어 콜백함수가 호출된 시점에  element객체
+                console.log(this); 
+        };
+        //방법2 함수를 만들어서 작성
+        function btn2ClickHandler(){
+            console.log('안녕');
+             console.log('안녕2');
+             alert('경고!!');
+             //this
+             //HTML onclick 호출되면 this = window 객체 , js onclick 호출되면 this =클릭된 element 객체
+             console.log(this);
+             return;
+        };
+        //함수명 활용
+        document.getElementById("btn-2").onclick = btn2ClickHandler;
+        // js가 btn-1 버튼이 클릭되면 ()을 붙여서 호출해줌. btn1ClickHandler();
+        //아래처럼 작성하면 안됨
+        //  document.getElementById("btn-1").onclick = btn1ClickHandler;//undefined 결과값을 onclick에 대입
+        document.getElementById("btn-3").addEventListener("click", btn2ClickHandler);
+        document.getElementById("btn-4").addEventListener("click", function(){
+            console.log("btn-4클릭")
+            console.log(this);
+        });
+
+    </script>
+    
+</body>
+</html>
