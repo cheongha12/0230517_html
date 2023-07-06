@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery dom event</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(loadedHandler);//페이지로딩되는 이벤트 등록
+        function loadedHandler() {
+            //페이지로 로딩되면 수행됨.
+            $("#show1").on("click", function () {
+                $("content1").show(1000,);
+                $("content2").hide();
+            });
+            $("#show1").on("click", function () {
+                $("content1").show(1000);
+                $("content2").hide("swing");
+            });
+            $("#show1").on("click", function () {
+                $("content1").toggle(1000);
+                $("content2").toggle("swing");
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button id="show1 ">보이기1</button>
+    <button id="show2 ">보이기2</button>
+    <button id="showhide">토글</button>
+    <div id="content1">
+        <input type="hidden" name="board_id" class="borard_id" aria-valuetext="16324">
+        <span class="borard_id" style="display: none;">16324</span>
+        <ul class="menu">
+            <li>11111menu1</li>
+            <li>menu2</li>
+            <li id="select">menu3</li>
+            <li class="c_select"><img src="/resources/images/ryan.svg">텍스트 노드<span>menu4</span></li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+    </div>
+    <!-- <button id="btnAdd ">추가</button> -->
+    <div id="conntent2">
+
+        <input type="hidden" name="borard_id " class="board_id" value="16324">
+        <span class="borard_id" style="display: none;">16324</span>
+        <ul class="menu">
+            <li>22222menu1</li>
+            <li>menu2</li>
+            <li id="select">menu3</li>
+            <li class="c_select">menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+    </div>
+    <button id="btnAdd ">추가</button>
+
+    <script>
+        var html1 = document.getElementsByClassName("c_select")[0].innerHTML;
+        console.log(html1);
+    //    document.getElementsByClassName("c_select")[0].innerHTML = '<"img src="/resources/images/cat.svg">텍스트 노드';
+    var html2 = document.getElementsByClassName("c_select")[0].innerText;
+    console.log(html2);
+    //    document.getElementsByClassName("c_select")[0].innerHTML = '<"img src="/resources/images/cat.svg">텍스트 노드';
+
+         var html3 = $(".c_select").eq(0).html();
+        console.log(html3);
+        // $(".c_select".eq(0.html)('<img src="/resources/images/cat.svg">텍스트 노드'));
+         var html4 = $(".c_select").eq(0).text();
+        console.log(html4);
+        // $(".c_selcet").eq(0).text('<img src="/resources/images/cat.svg">텍스트 노드');
+
+        $(".c_select").eq(1).attr("a","v1");
+        //    var html5= $(".c_select").eq(1).attr("a");
+        // $(".c_select").eq(1).attr("a","v1");
+        $(".c_select").eq(1).addClass("cl"); //기존의 클래스는 유지. 클래스 하나만 추가
+        $(".c_select").eq(1).removeClass("c1") //기존 클래스는 유지. 클래스 하나만 삭제
+
+
+
+        //여러요소에 이벤트 등록됨. jQuery
+        $(".c_select").on("click", function () {
+            console.log("select 눌림");
+            console.log(this);
+            console.log($(this));
+            if($(this).hasClass("c2")){
+                consoel.log("c2 클래스 포함되어있음");
+            }
+        });
+        //id # 는 하나의 요소만 찾고 더이상 찾지 않음
+        //id #은 하나에만 등록됨.
+        $(".c_select").on("click", function () {
+            console.log("select 눌림");
+            console.log(this);
+            console.log($(this));
+        });
+
+
+
+        var arr1 = [10,"hello",30,];
+        $.each(arr1, function(idx, element){
+            console.log("each cb함수: " +idx+", "+element);
+            console.log(this);
+        });
+        $.each(arr1, function(idx){
+            console.log("each cb함수: ");
+            console.log(this);
+        });
+        console.log("===============");
+        $.each($(".c_select"), function(idx, element){
+            console.log("each cb함수: "+idx+", "+element);
+            console.log(element);
+            console.log(this);
+            $(this).css("color","blue");
+        });
+        $.each($(".c_select"), function(idx, element){
+            console.log("each cb함수: "+idx+", "+element);
+            console.log(element);
+            console.log(this);
+            $(this).css("color","blue");
+        });
+
+        // $(".c_select").addClass("c4");
+        $(".c_select").addClass(function(idx){
+            console.log("addclass 의 function 호출");
+            console.log(idx);
+            console.log(this);
+            return "c_"+idx;
+            // if(idx ==0){
+            //     return "c0";
+            // }else{
+            //     return "c";
+            // }
+        });
+        // $(".c_select").toggleClass(function(idx,item,tf){ }, true);    //addClass()
+        // $(".c_select").toggleClass(function(idx,item,tf){ }, flase);    //removeClass()
+
+        var $element1 = $("c.select").eq(0);    //.eq(0) 의 자료형은 jQuery형
+        var element = $("c.select").get(0);     //.get(0)의 자료형은 js DOM형
+        console.log($element);
+        console.log(element);
+        // undifined console.log($element.innerHTML);
+        console.log($element.html());
+        console.log($element.innerHTML);
+        //오류  //  console.log(element1.html());
+        //element.html is not a function
+
+    </script>
+</body>
+
+</html>
