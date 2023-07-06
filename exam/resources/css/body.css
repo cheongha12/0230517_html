@@ -2,6 +2,7 @@
     list-style: none;
     display: flex;
     gap: 30px;
+    padding-left: 50px;
 }
 .abc li{
     border: 1px solid gainsboro;
@@ -28,13 +29,73 @@
 .subCategory > ul{
     list-style: none;
     display: flex;
-    gap: 15px ;
+    gap: 25px ;
+    height: auto;
+    justify-content: center;
+    /* border-radius: 25px; */
+    
+}
+.subCategory{
+    width: 1300px;
+    margin: 0 auto;
+    
 }
 .subCategory li{
     border: 1px solid  gainsboro;
+    border-radius: 50px;
     position: relative;
     box-sizing: border-box;
-    width: 100px;
-    height: 50px;
-    padding: 0 52px 0 12px;
+    width: 185px;
+    height: 66px;
+    align-items: center;
+    vertical-align: middle;
+    padding: 21px 2px 0 12px;
+}
+.subCategory .qqq{
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    left: 70px;
+    top: 22px;
+    font-size: 17px;
+    font-weight: bold;
+   
+    
+}
+.subCategory span >img{
+    position: absolute;
+    top:12px;
+    left: 12px;
+    vertical-align: middle;
+}
+span{
+    color: black;
+}
+/*할인특가상품 더보기*/
+
+.more{
+    border: 1px solid gainsboro;
+    display: inline-block;
+    padding: 0 2.5rem;
+    line-height:3.5rem;
+    border-radius: 9.9rem;
+    font-size: 15px;
+    font-weight: bold;
+
+  
+}
+.disbutton{
+    text-align: center;
+    
+    
+}
+.disbutton > morebutton{
+    position: absolute;
+    text-align: center;
+    
+    
+    
+    
+    
+    
 }
