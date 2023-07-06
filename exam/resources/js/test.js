@@ -1,3 +1,8 @@
+window.onload = function(){
+
+
+
+
 // <script> 태그는 작성하지 않음.
 // 팝업창 종류 
 //1. alret -확인버튼만 있는 창
@@ -11,3 +16,4 @@ var promptValue= prompt("컨펌창");
 alert(promptValue);
 console.log(promptValue);
 document.write(promptValue);
+};
