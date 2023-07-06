@@ -5,34 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ui평가</title>
 </head>
+<style>
+    html {
+        background-color:lightcyan ;
+    }
+    form {
+        background-color:lightgoldenrodyellow ;
+        display: table;
+        border: 2px solid gainsboro;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        width: 350px;
+        height: 400px;
+    }
+    input {
+        background-color:lightgoldenrodyellow;
+        border-top : none;
+        border-left: none;
+        border-right: none;
+        border-bottom: dashed;
+        border-color: darkgray;
+        
+    }
+    button {
+        background-color: darkseagreen;
+        color: black;
+        border: none;
+        width: 100%;
+        height: 100%;
+        font-size: large;
+        font-weight: bold;
+    }
+    p {
+        color: dimgray;
+        font-size: 1px;
+    }
+
+    tr>td:nth-child(1){
+        font-weight: bold;
+    }
+    .a {
+        height: 50px;
+    }
+
+</style>
+<script>
+    function foc() {
+        var msg =document.querySelector(".msg");
+        msg.innerText ="영문자 대/소문자 특수문자,숫자 포함 8~32자";
+    }
+    function b1(){
+        var id = document.querySelector("#id");
+        var required1=document.querySelector("r1");
+        if(id.value ==""){
+            required1.innerText = "필수 입력 항목입니다.";
+        }else{
+            required1.innerText ="";
+        }
+    }
+    function b2(){
+        var pswd= document.querySelector("#pswd");
+        var required2= document.querySelector(".msg");
+        if(pw.value == "") {
+                required2.innerText = "필수 입력 항목입니다.";
+            } else {
+                msg.innerText = "";
+            }
+        }
+    function b3(){
+        var pawdv= document.querySelector("#pawdv");
+        var required2= document.querySelector(".r2");
+        if(pawdv.value =="") {
+            required2.innerText="필수 입력 항목입니다.";
+        }else{
+            required2.innerText="";
+        }
+    }
+
+    function check() {
+            var id = document.querySelector("#id");
+            var required = document.querySelector(".required");
+            if(id.value == "") {
+                required.innerText = "필수 입력 항목입니다.";
+                id.focus();
+                return;
+            }
+        var pswd=document.querySelector("#pswd");
+        var required=document.querySelector("required");
+        if(pswd.value ==""){
+            required.innerText ="필수 입력 항목입니다.";
+            pswd.focus();
+            return;
+        }
+        var pwsdv=document.querySelector("pwsdv");
+        var required=document.querySelector(".required");
+        if(pwsdv.value ==""){
+            required.innerText="필수 입력 항목입니다.";
+            pwsdv.focus();
+            return;
+        }
+    }
+</script>
 <body>
+    <form>
     <div>
+        <table id="info">
         <tr>
-            <th>아이디</th>
-            <td><input type="text" name="id"></td>           
+            <td>아이디</td>
+            <td><input type="text" id="id" size="25" onblur="b1" required></td>           
         </tr>
         <tr>
-            <th>패스워드</th>
-            <td><input type="password" name="pswd"
-                placeholder="(영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자)">
-            </td>
+            <td><p>&nbsp;</p></td>
+            <td><p class="r1">&nbsp;</p></td>
+           
         </tr>
         <tr>
-            <th>패스워드확인</th>
-            <td><input type="password" name="pawdv"></td>
+            <td>패스워드</td>
+            <td><input type="password" id="pswd" size="25" onfocus="foc()" onblur="b2()" required></td>
+
         </tr>
         <tr>
-            <th>이메일</th>
-            <td><input type="text" name="email"></td>
+            <td><p>&nbsp;</p></td>
+            <td><p class="msg">&nbsp;</p></td>    
         </tr>
         <tr>
-            <th>주소</th>
-            <td><input type="text" name="adress"></td>
+            <td>패스워드확인</td>
+            <td><input type="password" id="pawdv" size="25" onblur="b3" required></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="button" value="회원가입"></td>
+            <td><p>&nbsp;</p></td>
+            <td><p class="r2">&nbsp;</p></td>    
         </tr>
+        <tr>
+            <td>이메일</td>>
+            <td><input type="text" size="8">@<input type="text" size="9"></td>
+        </tr>
+        <tr>
+            <td><p>&nbsp;</p></td>
+            <td><p>&nbsp;</p></td>
+        
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td>
+            <input type="text" size="25">
+            <br><br>
+            <input type="text" size="25">
+        </td>
+        </tr>
+        <tr>
+            <td><p>&nbsp;</p></td>
+            <td><p>&nbsp;</p></td>
+            </tr>
+            <tr>
+                <td><p>&nbsp;</p></td>
+        </tr>
+       
+        <tr>
+            <td class="a" colspan="2"><button type="button" onclick="check()">가입</button></td>
+        </tr>
+    </table>
     </div>
+</form>
     
 </body>
 </html>
